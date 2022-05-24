@@ -3,7 +3,6 @@
 	<head>
 		<style>
 			#center {
-				background-image: url("Textures/background.png");
 				position: absolute;
 				left: 0;
 				top: 0;
@@ -49,10 +48,6 @@
 				font-size: 0.25in;
 			}
 
-			#gen_info p {
-				font-size: 0.5in;
-			}
-
 			#hud {
 				position: relative;
 				width: 100%;
@@ -73,6 +68,9 @@
 				padding: 0px;
 				border: none;
 			}
+			body {
+				background-image: url("Textures/background.png");
+			}
 		</style>
 		<script src="lib/matrix.js" async defer></script>
 		<script src="lib/perlin.js" async defer></script>
@@ -88,24 +86,22 @@
 		<script src="main.js" async defer></script>
 	</head>
 	<body onunload="if(rm != null) rm.free();">
-		<img id="atlas" src="Textures/atlas.png" width="0" height="0" crossorigin="anonymous"></img>
-		<img id="wall" src="Textures/wall.png" width="0" height="0" crossorigin="anonymous"></img>
+		<img id="atlas" src="Textures/atlas.png" width="0" height="0" crossorigin="anonymous" hidden></img>
+		<img id="wall" src="Textures/wall.png" width="0" height="0" crossorigin="anonymous" hidden></img>
 		<div id="center">
-			<div id="selector">
-
-			</div>
+			<div id="selector"></div>
 			<div id="main_menu" class="view">
 				<p>Select world size:</p>
 				<select id="world_size">
-					<option value="4"> 64x64 </option>
-					<option value="8"> 128x128 </option>
-					<option value="10"> 160x160 </option>
-					<option value="16"> 256x256 </option>
-					<option value="20"> 320x320 </option>
-					<option value="32"> 512x512 </option>
+					<option value="4">64x64</option>
+					<option value="8">128x128</option>
+					<option value="10">160x160</option>
+					<option value="16">256x256</option>
+					<option value="20">320x320</option>
+					<option value="32">512x512</option>
 				</select>
 				<br>
-				<button type="button" onclick="main();"> StartWorld </button>
+				<button type="button" onclick="main();">Start World</button>
 			</div>
 			<div class="view" id="gen_info_box" hidden>
 				<p id="gen_info">Loading info</p>
