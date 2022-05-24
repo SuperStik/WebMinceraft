@@ -1,117 +1,117 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            #center {
-                background-image: url("Textures/background.png");
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
+	<head>
+		<style>
+			#center {
+				background-image: url("Textures/background.png");
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
 
-                text-align: center;
-                vertical-align: middle;
-                color:white;
-            }
+				text-align: center;
+				vertical-align: middle;
+				color:white;
+			}
 
-            #center .view {
-                margin: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                z-index: 10;
-            }
+			#center .view {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				z-index: 10;
+			}
 
-            #main_menu *{
-                margin: 10px;
-            }
+			#main_menu *{
+				margin: 10px;
+			}
 
-            #main_menu button {
-                background-color: #4CAF50; /* Green */
-                border: none;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-            }
+			#main_menu button {
+				background-color: #4CAF50; /* Green */
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+			}
 
-            #main_menu button:hover {
-                background-color: darkslategrey;
-                cursor: pointer;
-            }
+			#main_menu button:hover {
+				background-color: darkslategrey;
+				cursor: pointer;
+			}
 
-            #main_menu p {
-                font-size: 0.25in;
-            }
+			#main_menu p {
+				font-size: 0.25in;
+			}
 
-            #gen_info p {
-                font-size: 0.5in;
-            }
+			#gen_info p {
+				font-size: 0.5in;
+			}
 
-            #hud {
-                position: relative;
-                width: 100%;
-                height: 100%;
-            }
+			#hud {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
 
-            #selector {
-                z-index: 15;
-                position: absolute;
-                background-color: rgb(0, 0, 0, 0.8);
-                bottom: 0%;
-                left: 50%;
-            }
-            #selector div {
-                display: inline-block;
-                background-image: url("Textures/atlas.png");
-                margin: 0px;
-                padding: 0px;
-                border: none;
-            }
-        </style>
-    </head>
-    <body onunload="if(rm != null) rm.free();">
-        <img id="atlas" src="Textures/atlas.png" width="0" height="0" crossorigin="anonymous"></img>
-        <img id="wall" src="Textures/wall.png" width="0" height="0" crossorigin="anonymous"></img>
-        <div id="center">
-            <div id="selector">
+			#selector {
+				z-index: 15;
+				position: absolute;
+				background-color: rgb(0, 0, 0, 0.8);
+				bottom: 0%;
+				left: 50%;
+			}
+			#selector div {
+				display: inline-block;
+				background-image: url("Textures/atlas.png");
+				margin: 0px;
+				padding: 0px;
+				border: none;
+			}
+		</style>
+	</head>
+	<body onunload="if(rm != null) rm.free();">
+		<img id="atlas" src="Textures/atlas.png" width="0" height="0" crossorigin="anonymous"></img>
+		<img id="wall" src="Textures/wall.png" width="0" height="0" crossorigin="anonymous"></img>
+		<div id="center">
+			<div id="selector">
 
-            </div>
-            <div id="main_menu" class="view">
-                <p>Select world size:</p>
-                <select id="world_size">
-                    <option value="4"> 64x64 </option>
-                    <option value="8"> 128x128 </option>
-                    <option value="10"> 160x160 </option>
-                    <option value="16"> 256x256 </option>
-                    <option value="20"> 320x320 </option>
-                    <option value="32"> 512x512 </option>
-                </select>
-                <br>
-                <button type="button" onclick="main();"> StartWorld </button>
-            </div>
-            <div id="gen_info" class="view" hidden>
-                <p>Loading info</p>
-            </div>
-        </div>
+			</div>
+			<div id="main_menu" class="view">
+				<p>Select world size:</p>
+				<select id="world_size">
+					<option value="4"> 64x64 </option>
+					<option value="8"> 128x128 </option>
+					<option value="10"> 160x160 </option>
+					<option value="16"> 256x256 </option>
+					<option value="20"> 320x320 </option>
+					<option value="32"> 512x512 </option>
+				</select>
+				<br>
+				<button type="button" onclick="main();"> StartWorld </button>
+			</div>
+			<div id="gen_info" class="view" hidden>
+				<p>Loading info</p>
+			</div>
+		</div>
 
-        <canvas id="glCanvas" oncontextmenu="return false;" width="640" height="480" style="position: absolute; top: 0; left:0" hidden></canvas>
-        <script src="lib/matrix.js"></script>
-        <script src="lib/perlin.js"></script>
-        <script src="code/shader_sources.js"></script>
-        <script src="blocks.js"></script>
-        <script src="code/Physics.js"></script>
-        <script src="code/ResourceManager.js"></script>
-        <script src="code/Renderer.js"></script>
-        <script src="code/GUI.js"></script>
-        <script src="code/Player.js"></script>
-        <script src="code/World.js"></script>
-        <script src="code/Input.js"></script>
-        <script src="main.js"></script>
-    </body>
+		<canvas id="glCanvas" oncontextmenu="return false;" width="640" height="480" style="position: absolute; top: 0; left:0" hidden></canvas>
+		<script src="lib/matrix.js"></script>
+		<script src="lib/perlin.js"></script>
+		<script src="code/shader_sources.js"></script>
+		<script src="blocks.js"></script>
+		<script src="code/Physics.js"></script>
+		<script src="code/ResourceManager.js"></script>
+		<script src="code/Renderer.js"></script>
+		<script src="code/GUI.js"></script>
+		<script src="code/Player.js"></script>
+		<script src="code/World.js"></script>
+		<script src="code/Input.js"></script>
+		<script src="main.js"></script>
+	</body>
 </html>
