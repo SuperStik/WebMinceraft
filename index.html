@@ -74,6 +74,18 @@
 				border: none;
 			}
 		</style>
+		<script src="lib/matrix.js" async defer></script>
+		<script src="lib/perlin.js" async defer></script>
+		<script src="code/shader_sources.js" async defer></script>
+		<script src="blocks.js" async defer></script>
+		<script src="code/Physics.js" async defer></script>
+		<script src="code/ResourceManager.js" async defer></script>
+		<script src="code/Renderer.js" async defer></script>
+		<script src="code/GUI.js" async defer></script>
+		<script src="code/Player.js" async defer></script>
+		<script src="code/World.js" async defer></script>
+		<script src="code/Input.js" async defer></script>
+		<script src="main.js" async defer></script>
 	</head>
 	<body onunload="if(rm != null) rm.free();">
 		<img id="atlas" src="Textures/atlas.png" width="0" height="0" crossorigin="anonymous"></img>
@@ -102,17 +114,5 @@
 		</div>
 
 		<canvas id="glCanvas" oncontextmenu="return false;" width="640" height="480" style="position: absolute; top: 0; left:0" hidden></canvas>
-		<script src="lib/matrix.js"></script>
-		<script src="lib/perlin.js"></script>
-		<script src="code/shader_sources.js"></script>
-		<script src="blocks.js"></script>
-		<script src="code/Physics.js"></script>
-		<script src="code/ResourceManager.js"></script>
-		<script src="code/Renderer.js"></script>
-		<script src="code/GUI.js"></script>
-		<script src="code/Player.js"></script>
-		<script src="code/World.js"></script>
-		<script src="code/Input.js"></script>
-		<script src="main.js"></script>
 	</body>
 </html>
