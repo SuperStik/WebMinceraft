@@ -24,7 +24,7 @@
 				z-index: 10;
 			}
 
-			#main_menu *{
+			#main_menu * {
 				margin: 10px;
 			}
 
@@ -61,7 +61,9 @@
 				bottom: 0%;
 				left: 50%;
 			}
+
 			#selector div {
+				cursor: pointer;
 				display: inline-block;
 				background-image: url("Textures/atlas.webp");
 				margin: 0px;
@@ -72,8 +74,13 @@
 				image-rendering: crisp-edges;
 				image-rendering: pixelated;
 			}
+
 			body {
 				background-image: url("Textures/background.png");
+			}
+
+			canvas {
+				cursor: crosshair;
 			}
 		</style>
 		<script src="lib/matrix.js" async defer></script>
