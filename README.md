@@ -5,5 +5,5 @@ In order to run this game in your computer you should run **gen_sources.js** for
 
 # To do:
 - [x] Make selector less blurry
-- [ ] Change image format to webp
+- [x] Compress textures
 - [ ] Replace textures
