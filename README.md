@@ -7,3 +7,4 @@ In order to run this game in your computer you should run **gen_sources.js** for
 - [x] Make selector less blurry
 - [x] Compress textures
 - [ ] Replace textures
+- [ ] Add level saving
